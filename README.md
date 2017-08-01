@@ -32,6 +32,7 @@ QQ空间爬虫，一小时20万数据
 
 <ul>
 <li>可参考此篇博客</li><br>
-  <a href="">
+  <a href="https://my.oschina.net/u/3264690/blog/1498751">抓取60000+QQ空间说说做一次数据分析
+</a>
 
 </ul>
