@@ -8,11 +8,15 @@ QQ空间爬虫，一小时20万数据
 <li>selenium</li>
 <li>configparser</li>
 <li>xlwt</li>
-  可使用pip或者easy_install安装
-  安装格式为：
-  pip install ...
-  easy_install ...
+
+
 </ul>
+
+<h1>安装环境</h1>
+  可使用pip或者easy_install安装<br>
+  安装格式为：<br>
+  pip install ...<br>
+  easy_install ...<br>
 
 <h1>运行项目</h2>
 <ul>
@@ -21,7 +25,7 @@ QQ空间爬虫，一小时20万数据
 <li>好友qq_number存储在frends文件夹中的json文件中</li><br>
   
 <li>说说mood存储在mood_detail中的excel文件夹中</li><br>
-<li>文件data_analys.py中可选择将数据存入mysql中<li>
+<li>文件data_analys.py中可选择将数据存入mysql中</li>
 </ul>
 
 <h1>数据分析</h1>
