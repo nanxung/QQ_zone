@@ -25,31 +25,34 @@ class Spider(object):
         self.req=requests.Session()
         self.cookies={}
 
-    
+
 
     def login(self):
         self.web.switch_to_frame('login_frame')
         log=self.web.find_element_by_id("switcher_plogin")
         log.click()
-        time.sleep(1)
+        time.sleep(3)
         username=self.web.find_element_by_id('u')
         username.send_keys(self.__username)
         ps=self.web.find_element_by_id('p')
         ps.send_keys(self.__password)
         btn=self.web.find_element_by_id('login_button')
-        time.sleep(1)
+        time.sleep(3)
         btn.click()
-        time.sleep(2)
+        time.sleep(5)
         self.web.get('https://user.qzone.qq.com/{}'.format(self.__username))
         cookie=''
         for elem in self.web.get_cookies():
             cookie+=elem["name"]+"="+ elem["value"]+";"
+        print(cookie)
         self.cookies=cookie
         self.get_g_tk()
         self.headers['Cookie']=self.cookies
-        self.web.quit()
-        
-    
+
+
+        # self.web.quit()
+
+
     def get_frends_url(self):
         url='https://h5.qzone.qq.com/proxy/domain/base.qzone.qq.com/cgi-bin/right/get_entryuinlist.cgi?'
         params = {"uin": self.__username,
@@ -119,7 +122,7 @@ class Spider(object):
                     with open('./mood_detail/'+u['label']+"/" +str(QQ_number)+"_"+ str(pos) + '.json', 'w',encoding='utf-8') as w:
                         w.write(mood_detail.text)
                     pos += 20
-            time.sleep(2)
+            time.sleep(5)
 
 
     def get_g_tk(self):
@@ -131,7 +134,7 @@ class Spider(object):
         self.g_tk=h&2147483647
 
 
-        
+
 
 if __name__=='__main__':
     sp=Spider()
